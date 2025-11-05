@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Self-Reliant Resources</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <style>
+        /* CSS Variables and Base Styles (Matched with main page) */
+        :root {
+            --brand-teal: #426c6a;
+            --brand-teal-dark: #385c5a;
+            --heading-brown: #4A2F24;
+            --text-color: #222222;
+            --bg-color: #FFFFFF;
+            --font-heading-new: 'Manrope', sans-serif;
+            --font-body: 'Inter', system-ui, sans-serif;
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-body); background-color: var(--bg-color); color: var(--text-color); line-height: 1.7; }
+        h1, h2, h3 { font-family: var(--font-heading-new); color: var(--heading-brown); line-height: 1.3; }
+        h1 { font-size: clamp(2rem, 5vw, 2.75rem); margin-bottom: 1rem; font-weight: 800;}
+
+        .container { width: 90%; max-width: 800px; margin: 0 auto; }
+        section { padding: 4rem 0; }
+
+        /* MODIFIED: Header background color updated */
+        .contact-header { padding: 3rem 0; background-color: #c1d9d8; text-align: center; }
+        
+        .contact-content p { margin-bottom: 1.5rem; }
+        .contact-content strong { color: var(--heading-brown); }
+
+        /* MODIFIED: CTA Button styles updated to match main page */
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background-color: var(--brand-teal);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: 1px solid var(--brand-teal);
+            cursor: pointer;
+            margin-top: 2rem;
+            box-shadow: 0 0 18px rgba(251, 237, 186, 0.9), 
+                        inset 0 1px 1px rgba(255, 255, 255, 0.4), 
+                        inset 0 -1px 1px rgba(0, 0, 0, 0.15);
+        }
+        .cta-button:hover, .cta-button:focus-visible {
+            background-color: var(--brand-teal-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 0 25px rgba(251, 237, 186, 1),
+                        inset 0 1px 1px rgba(255, 255, 255, 0.4), 
+                        inset 0 -1px 1px rgba(0, 0, 0, 0.15);
+            outline: none;
+        }
+        
+        /* MODIFIED: Footer styles updated to match main page */
+        footer { 
+            background-color: var(--brand-teal); 
+            color: white; 
+            text-align: center; 
+            padding: 2.5rem 1rem; 
+            font-size: 0.9rem; 
+            margin-top: 3rem; 
+        }
+        .footer-disclosure { 
+            font-size: 0.85rem; max-width: 875px; margin: 0 auto 1.5rem auto; opacity: 0.8; line-height: 1.6; 
+        }
+        .footer-disclosure strong { color: #FFFFFF; display: block; margin-bottom: 0.5rem; }
+        .footer-bottom { 
+            border-top: 1px solid rgba(255,255,255,0.2); 
+            padding-top: 1.5rem; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            gap: 1rem; 
+        }
+        .footer-bottom p { margin: 0; opacity: 0.7; }
+        .footer-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem 1.5rem; }
+        .footer-nav a { color: #FFFFFF; text-decoration: none; transition: color 0.3s ease; font-weight: 700; }
+        .footer-nav a:hover { color: #fbedba; }
+
+        @media (min-width: 768px) {
+            .footer-bottom { flex-direction: row; justify-content: space-between; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="contact-header">
+        <div class="container">
+            <h1>Contact Us</h1>
+        </div>
+    </header>
+
+    <main>
+        <section class="contact-content">
+            <div class="container">
+                <p>Thank you for visiting this resource page. I am passionate about sharing well-researched information on self-reliance and preparedness.</p>
+                
+                <p>If you have a question specifically about the information presented on my review page, you can reach me at the following email address:</p>
+                
+                <p><strong><a href="mailto:your-email@example.com">your-email@example.com</a></strong></p>
+                
+                <p><strong>Please Note:</strong> This contact is for inquiries related to this informational website only. For any questions regarding product purchasing, digital access, billing, or customer support for "The Lost SuperFoods," please use the contact information provided on their official website after you click through.</p>
+
+                <a href="The Last Super Food.html" class="cta-button">Back to the Review Page</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p class="footer-disclosure">
+                <strong>My Transparency Promise:</strong> My goal is to provide helpful, well-researched information. To support my work, I may earn a commission if you purchase through the links on this page, at no extra cost to you. Please know that this is an independent resource I created and is not the official product website.
+            </p>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> Self-Reliant Resources. All Rights Reserved.</p>
+                <nav class="footer-nav">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="contact.html">Contact Us</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Automatically update the copyright year
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>

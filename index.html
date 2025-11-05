@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rediscover Lost Pantry Secrets | The Lost SuperFoods</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Merriweather:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <style>
+        /* CSS Variables and Base Styles */
+        :root {
+            --brand-green: #2F5D3A;
+            --brand-green-dark: #254c30;
+            --brand-red: #D13B2E;
+            --brand-red-dark: #B93024;
+            --brand-teal: #426c6a;
+            --brand-teal-dark: #385c5a;
+            --muted-olive: #7A9B6C;
+            --card-tan: #F2E6D0;
+            --heading-brown: #4A2F24;
+            --text-color: #222222;
+            --bg-color: #FFFFFF;
+            
+            --headline-color: var(--heading-brown);
+            --light-bg-alt: #F8F6F2; 
+            --dark-accent: #3D3331; 
+            --font-heading-new: 'Manrope', sans-serif;
+            --font-body: 'Inter', system-ui, sans-serif;
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-body); background-color: var(--bg-color); color: var(--text-color); line-height: 1.7; overflow-x: hidden; }
+
+        /* Animations */
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes fadeInLeft { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }
+        @keyframes fadeInRight { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
+
+        /* Typography */
+        h2, h3 { font-family: var(--font-heading-new); color: var(--headline-color); line-height: 1.3; }
+        h2 { font-size: clamp(1.75rem, 4vw, 2.25rem); text-align: center; margin-bottom: 2.5rem; font-weight: 800; }
+        h3 { font-size: clamp(1.1rem, 2.5vw, 1.25rem); margin-bottom: 1.5rem; font-weight: 700; }
+
+        /* Layout */
+        .container { width: 90%; max-width: 1280px; margin: 0 auto; }
+        section { padding: 4rem 0; }
+
+        /* --- HERO SECTION STYLES --- */
+        .hero-section-new {
+            background-color: #F4F9F4;
+            padding: 4rem 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .hero-new-container {
+            width: 90%;
+            max-width: 1500px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 4rem; 
+        }
+        .hero-new-text {
+            animation: fadeInLeft 1s ease-out;
+        }
+        .hero-new-text h1 {
+            font-family: var(--font-heading-new);
+            font-size: clamp(3rem, 6vw, 4.5rem);
+            color: var(--headline-color);
+            line-height: 1.2;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+        }
+        .hero-new-text p.subheading {
+            font-size: 1.2rem;
+            max-width: 550px;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        .hero-new-text p.video-hook {
+            font-size: 1.15rem;
+            max-width: 550px;
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+            font-style: italic;
+            color: var(--brand-teal);
+            font-weight: 500;
+        }
+        .hero-new-benefits {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+        .hero-new-benefits li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+        .hero-new-benefits i {
+            color: var(--brand-teal);
+            background-color: #fbedba;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            display: grid;
+            place-items: center;
+            font-size: 1rem;
+            flex-shrink: 0;
+            box-shadow: 0 0 12px rgba(251, 237, 186, 0.8), 
+                        inset 0 1px 1px rgba(255, 255, 255, 0.7), 
+                        inset 0 -1px 1px rgba(0, 0, 0, 0.1);
+        }
+        .hero-new-image {
+             animation: fadeInRight 1s ease-out;
+        }
+
+        /* --- BOTTOM CTA --- */
+        .hero-cta-wrapper {
+            padding-top: 4rem;
+            text-align: center;
+            animation: fadeIn 1s ease-out 0.5s;
+            animation-fill-mode: backwards;
+        }
+        .hero-bottom-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            background-color: var(--brand-teal);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border: 1px solid var(--brand-teal);
+            box-shadow: 0 0 18px rgba(251, 237, 186, 0.9), 
+                        inset 0 1px 1px rgba(255, 255, 255, 0.4), 
+                        inset 0 -1px 1px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+        }
+        .hero-bottom-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 25px rgba(251, 237, 186, 1), 
+                        inset 0 1px 1px rgba(255, 255, 255, 0.4), 
+                        inset 0 -1px 1px rgba(0, 0, 0, 0.15);
+            background-color: var(--brand-teal-dark);
+            border-color: var(--brand-teal-dark);
+        }
+        .hero-bottom-cta .play-icon {
+            background-color: white;
+            color: var(--brand-teal);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            font-size: 1.1rem;
+        }
+
+
+        .hero-image { display: flex; justify-content: center; align-items: center; }
+        .book-link { text-decoration: none; display: inline-block; }
+        .book-image-standalone {
+            display: block;
+            width: 100%;
+            max-width: 600px; /* Increased size to fill space better */
+            height: auto;
+            border-radius: 8px;
+            filter: drop-shadow(0 15px 25px rgba(0,0,0,0.2));
+            transition: transform 0.4s ease-in-out, filter 0.4s ease-in-out; /* Smoothed and slightly slowed the animation */
+        }
+
+        .book-image-standalone:hover {
+            transform: translateY(-10px) scale(1.03); /* Slightly increased the hover effect */
+            filter: drop-shadow(0 28px 35px rgba(0,0,0,0.25)); /* Enhances the shadow for a 3D effect */
+        }
+
+        /* --- CENTRAL CTA BUTTON --- */
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background-color: var(--brand-teal);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 1px solid var(--brand-teal);
+            cursor: pointer;
+            box-shadow: 0 0 18px rgba(251, 237, 186, 0.9), 
+                        inset 0 1px 1px rgba(255, 255, 255, 0.4), 
+                        inset 0 -1px 1px rgba(0, 0, 0, 0.15);
+        }
+        .cta-button:hover, .cta-button:focus-visible {
+            background-color: var(--brand-teal-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 0 25px rgba(251, 237, 186, 1),
+                        inset 0 1px 1px rgba(255, 255, 255, 0.4), 
+                        inset 0 -1px 1px rgba(0, 0, 0, 0.15);
+            outline: none;
+        }
+        .cta-button .fa-arrow-right {
+            transition: transform 0.3s ease;
+        }
+        .cta-button:hover .fa-arrow-right {
+            transform: translateX(5px);
+        }
+
+        /* Personal Connection Section */
+        .personal-connection { padding: 3rem 0; }
+        .connection-box {
+            background-color: #fbedba;
+            border-radius: 4px; 
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 1.5rem;
+            border: 1px solid rgba(170, 147, 100, 0.4);
+            position: relative;
+            z-index: 1;
+            /* Subtler, more realistic shadow */
+            box-shadow: 
+                0 4px 12px rgba(0,0,0,0.08), 
+                inset 0 1px 0 rgba(255,255,255,0.7);
+        }
+
+        .connection-box::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.15;
+            mix-blend-mode: multiply;
+            z-index: -1;
+            border-radius: 4px;
+            pointer-events: none;
+        }
+        
+        .connection-box img { 
+            width: 90px; 
+            height: 90px; 
+            border-radius: 50%; 
+            object-fit: cover; 
+            border: 4px solid var(--brand-teal); 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1),
+                        inset 0 2px 2px rgba(0,0,0,0.4),
+                        inset 0 -2px 2px rgba(255,255,255,0.7);
+        }
+        .connection-text { max-width: 650px; }
+        .connection-text h3 { font-size: 1.3rem; margin-bottom: 0.75rem; }
+        .connection-text p { 
+            line-height: 1.8; 
+            color: var(--heading-brown); 
+        }
+
+        /* Trust Badges Section */
+        .trust-badges { padding: 2.5rem 0; background-color: #F9FAFB; color: var(--text-color); } /* Changed background */
+        .trust-badges-container-wrapper { text-align: center; }
+        .trust-badges-container { display: inline-flex; flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+        .badge { display: flex; align-items: center; gap: 1rem; font-size: 0.9rem; font-weight: 700; text-align: left; }
+        .badge i {
+            color: var(--brand-teal);
+            background-color: #fbedba;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            display: grid;
+            place-items: center;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            box-shadow: 0 0 12px rgba(251, 237, 186, 0.8), 
+                        inset 0 1px 1px rgba(255, 255, 255, 0.7), 
+                        inset 0 -1px 1px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Features Section */
+        .features { background-color: var(--bg-color); padding-top: 4rem; padding-bottom: 4rem; }
+        .features-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+        .feature-card { 
+            background-color: #f1f7f6; 
+            padding: 2rem; 
+            border-radius: 8px; 
+            text-align: center; 
+            transition: transform 0.3s ease, box-shadow 0.3s ease; 
+            border: 1px solid rgba(0,0,0,0.06); 
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+        }
+        .feature-card:hover { 
+            transform: translateY(-8px); 
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08), 0 0 20px rgba(66, 108, 106, 0.2);
+        }
+        .feature-icon {
+            font-size: 2.5rem;
+            margin: 0 auto 1.5rem auto;
+            width: 70px;
+            height: 70px;
+            display: grid;
+            place-items: center;
+            background-color: #fbedba;
+            border-radius: 50%;
+            box-shadow: 
+                0 0 18px rgba(251, 237, 186, 0.9),
+                inset 0 2px 2px rgba(255, 255, 255, 0.7),
+                inset 0 -2px 2px rgba(0, 0, 0, 0.1);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        .icon-shield { color: #696969; } 
+        .icon-pemmican { color: #E4572E; } /* Natural fire orange */
+        .icon-egg { color: #DAA520; } 
+        .icon-cheese { color: #FFD700; } 
+        .icon-jam { color: #C03B2E; } /* Natural jam red */
+        .icon-meat { color: #800000; }
+        .feature-card h3 { font-size: 1.2rem; }
+        .feature-card p { color: #666; }
+        .features-transition { text-align: center; font-size: 1.15rem; font-weight: 400; line-height: 1.8; max-width: 700px; margin: 3rem auto 0 auto; }
+        
+        /* Trust Section --- NEW LAYOUT for Visual Rhythm */
+        .trust { padding-top: 0; }
+        .trust-grid { 
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .trust-column { 
+            background-color: #f1f7f6; 
+            padding: 1.5rem 2rem; 
+            border-radius: 8px; 
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        .trust-column:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1), 0 0 20px rgba(66, 108, 106, 0.1);
+        }
+        .trust-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+            width: 60px;
+            height: 60px;
+            display: grid;
+            place-items: center;
+            background-color: #fbedba;
+            border-radius: 50%;
+            box-shadow: 
+                inset 0 2px 2px rgba(255, 255, 255, 0.7),
+                inset 0 -2px 2px rgba(0, 0, 0, 0.1);
+            color: var(--brand-teal);
+        }
+        .trust-column h3 { font-size: 1.2rem; margin-bottom: 0.25rem; }
+        .trust-column p { margin-bottom: 0; }
+        
+        /* Central CTA Section */
+        .central-cta { 
+            background-color: #c1d9d8; 
+            padding: 4rem 2rem; /* Increased padding */
+            text-align: center; 
+            border-radius: 12px; 
+        }
+        .central-cta h2 { 
+            margin-bottom: 1.5rem; 
+            font-size: clamp(2rem, 5vw, 2.75rem); /* Larger heading */
+            font-weight: 800;
+        }
+        .central-cta p { 
+            max-width: 650px; 
+            margin: 0 auto 2.5rem auto; 
+            font-size: 1.1rem; /* Slightly larger text */
+        }
+        
+        /* Footer */
+        footer { 
+            background-color: var(--brand-teal); 
+            color: white; 
+            text-align: center; 
+            padding: 2.5rem 1rem; 
+            font-size: 0.9rem; 
+            margin-top: 3rem; 
+        }
+        .footer-disclosure { 
+            font-size: 0.85rem; max-width: 875px; margin: 0 auto 1.5rem auto; opacity: 0.8; line-height: 1.6; 
+        }
+        .footer-disclosure strong { color: #FFFFFF; display: block; margin-bottom: 0.5rem; }
+        .footer-bottom { 
+            border-top: 1px solid rgba(255,255,255,0.2); 
+            padding-top: 1.5rem; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            gap: 1rem; 
+        }
+        .footer-bottom p { margin: 0; opacity: 0.7; }
+        .footer-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem 1.5rem; }
+        .footer-nav a { color: #FFFFFF; text-decoration: none; transition: color 0.3s ease; font-weight: 700; }
+        .footer-nav a:hover { color: #fbedba; }
+        
+        /* --- MEDIA QUERIES --- */
+        @media (max-width: 950px) {
+            .hero-section-new { min-height: auto; padding: 3rem 0; }
+            .hero-new-container { grid-template-columns: 1fr; text-align: center; }
+            
+            .hero-new-text h1 {
+                text-align: center;
+            }
+            .hero-new-text p.subheading, .hero-new-text p.video-hook { margin-left: auto; margin-right: auto; }
+            
+            .hero-new-benefits { 
+                display: inline-flex;
+                text-align: left;
+            }
+            .book-image-standalone {
+                max-width: 320px;
+                margin: 0 auto;
+            }
+
+            .hero-bottom-cta {
+                padding: 0.75rem 1.5rem;
+                font-size: 1rem;
+                gap: 0.75rem;
+            }
+            .hero-bottom-cta .play-icon {
+                width: 36px;
+                height: 36px;
+                font-size: 0.9rem;
+            }
+
+            .personal-connection {
+                padding-bottom: 0;
+            }
+            .trust-badges {
+                padding-top: 2.5rem; 
+            }
+        }
+
+        @media (min-width: 768px) {
+            .connection-box { flex-direction: row; text-align: left; gap: 2rem; }
+            .trust-badges-container { flex-direction: row; justify-content: center; gap: 2.5rem; }
+            .features-grid { grid-template-columns: repeat(2, 1fr); }
+            /* The trust section is now flex-column, so we don't need the grid rule here */
+            .footer-bottom { flex-direction: row; justify-content: space-between; }
+        }
+
+        @media (min-width: 1024px) {
+            .features-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+        }
+    </style>
+</head>
+<body>
+    <header class="hero-section-new">
+        <div class="hero-new-container">
+            <!-- Item 1: Text -->
+            <div class="hero-new-text">
+                <h1>The Lost Art of the Crisis-Proof Pantry</h1>
+                <p class="subheading">I'd like to share 126 forgotten recipes and preservation skills from our ancestors that can make your food supply truly independent.</p>
+                <p class="video-hook">In the video presentation below, you will also see the surprising story of how these skills were almost erased from history.</p>
+                <ul class="hero-new-benefits">
+                    <li><i class="fas fa-book-open"></i>Master 126+ Time-Tested Recipes</li>
+                    <li><i class="fas fa-unlink"></i>Achieve True Food Independence</li>
+                    <li><i class="fas fa-hands-helping"></i>Gain Practical, Lifelong Skills</li>
+                </ul>
+            </div>
+
+            <!-- Item 2: Image -->
+            <div class="hero-new-image">
+                <div class="hero-image">
+                    <a href="https://ultimatesurvivalfoods.com/book/?aff=happylifeofficial" class="book-link" aria-label="Explore The Lost Superfoods">
+                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhBjgsVO7KVCc7t7h6hOEroc8G2-wjSYb1zL4CSLPXg4Lxpd-qEZ-M8nwhtzUvnJbBtIITvjN59gO0B15r38IswfUEQhy9TwJgTi2HMEqpeHsfhdsfvpwmzhsXCCj5KKGqksI1-kb5zol9IXdlsnVdACrT1SHW9cLNm2JzaZyivPyOhyphenhyphensXLTGQYKJcr7ByN/w496-h640/the-last-super-foods.png" alt="The Lost SuperFoods realistic book cover" class="book-image-standalone">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Item 3: Centered CTA below the grid -->
+        <div class="hero-cta-wrapper">
+            <a href="https://ultimatesurvivalfoods.com/book/?aff=happylifeofficial" class="hero-bottom-cta" aria-label="Watch the Full Video Presentation">
+                <span class="play-icon"><i class="fas fa-play"></i></span>
+                <span>Watch The Free Video Presentation</span>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section class="trust-badges">
+            <div class="container">
+                <div class="trust-badges-container-wrapper">
+                    <div class="trust-badges-container">
+                        <div class="badge">
+                            <i class="fas fa-bolt"></i>
+                            <span>Instant Digital Access</span>
+                        </div>
+                        <div class="badge">
+                            <i class="fas fa-lock"></i>
+                            <span>100% Secure Checkout</span>
+                        </div>
+                        <div class="badge">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>60-Day Money-Back Guarantee</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="personal-connection">
+            <div class="container">
+                <div class="connection-box">
+                    <img src="https://placehold.co/100x100/594545/FBF9F4?text=Author" alt="A friendly photo of the author/researcher">
+                    <div class="connection-text">
+                        <h3>My Promise to You</h3>
+                        <p>If you've arrived from my Quora answer, thank you for taking the next step. I'm passionate about researching these lost self-reliance skills, and I only recommend resources I believe are truly valuable. I created this page to give you a clear, honest overview of 'The Lost SuperFoods' before you visit their official site, helping you make the best decision for your family.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h2>A Glimpse Into The Lost SuperFoods</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-shield-halved feature-icon icon-shield"></i>
+                        <h3>U.S. Army's "Doomsday Ration"</h3>
+                        <p>The Cold War recipe for a high-calorie, long-lasting ration bar designed for ultimate survival scenarios.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-fire feature-icon icon-pemmican"></i>
+                        <h3>Wild West "Pemmican"</h3>
+                        <p>Learn the exact method to create the legendary, nutrient-dense survival food of frontiersmen and explorers.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-egg feature-icon icon-egg"></i>
+                        <h3>Preserving Eggs Over a Year</h3>
+                        <p>A simple, time-tested technique to keep fresh eggs perfectly edible for more than 12 months without refrigeration.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-cheese feature-icon icon-cheese"></i>
+                        <h3>Long-Lasting Pioneer Cheese</h3>
+                        <p>Discover how our grandparents preserved cheese for months, locking in flavor and preventing spoilage.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-jar feature-icon icon-jam"></i>
+                        <h3>Depression-Era "Poor Man's Jam"</h3>
+                        <p>A resourceful recipe to create delicious jams without any sugar.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-drumstick-bite feature-icon icon-meat"></i>
+                        <h3>Preserving Meat Without a Freezer</h3>
+                        <p>Master the ancient arts of curing and smoking to safely store meat for years, just as our ancestors did.</p>
+                    </div>
+                </div>
+                <div class="features-transition">
+                    <p>I believe these six skills alone can transform your pantry, but they are just the tip of the iceberg. This is just a preview of the **126 historically-proven techniques** you will master inside The Lost SuperFoods, each one designed for...</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="container trust">
+            <h2 style="padding-top: 2rem;">...Real-World Self-Reliance</h2>
+            <div class="trust-grid">
+                <div class="trust-column">
+                    <i class="fas fa-list-check trust-icon"></i>
+                    <div>
+                        <h3>Step-by-Step Clarity</h3>
+                        <p>Every recipe features full-color photos and simple instructions, making it easy for anyone to master these skills.</p>
+                    </div>
+                </div>
+                <div class="trust-column">
+                    <i class="fas fa-scroll trust-icon"></i>
+                    <div>
+                        <h3>Historically Proven</h3>
+                        <p>These aren't theories, but time-tested methods used for centuries by pioneers, soldiers, and homesteaders.</p>
+                    </div>
+                </div>
+                <div class="trust-column">
+                    <i class="fas fa-chart-pie trust-icon"></i>
+                    <div>
+                        <h3>Complete Nutritional Info</h3>
+                        <p>Each recipe includes a full nutritional breakdown, so you can plan your long-term food supply with absolute confidence.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="central-cta">
+                <h2>Ready to Build a Truly Resilient Pantry?</h2>
+                <p>Gain the peace of mind that comes from knowing you can provide for your family, no matter what. See the complete collection on the official website.</p>
+                <a href="https://ultimatesurvivalfoods.com/book/?aff=happylifeofficial" class="cta-button">
+                    <span>Yes! Give Me Instant Access</span> <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p class="footer-disclosure">
+                <strong>My Transparency Promise:</strong> My goal is to provide helpful, well-researched information. To support my work, I may earn a commission if you purchase through the links on this page, at no extra cost to you. Please know that this is an independent resource I created and is not the official product website.
+            </p>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> The Lost Skills Curator. All Rights Reserved.</p>
+                <nav class="footer-nav">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="contact.html">Contact Us</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Automatically update the copyright year
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
+
